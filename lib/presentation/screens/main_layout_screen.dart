@@ -107,15 +107,15 @@ class _GlassNav extends ConsumerWidget {
           child: Row(
             children: [
               _NavItem(
-                icon: Icons.home_outlined,
-                activeIcon: Icons.home_rounded,
+                icon: Icons.house_outlined,
+                activeIcon: Icons.house_rounded,
                 label: 'Inicio',
                 isActive: currentIndex == 0,
                 onTap: () => go(0),
               ),
               _NavItem(
-                icon: Icons.location_on_outlined,
-                activeIcon: Icons.location_on,
+                icon: Icons.tune_rounded,
+                activeIcon: Icons.tune_rounded,
                 label: 'Filtros',
                 isActive: currentIndex == 1,
                 onTap: () => go(1),
@@ -157,6 +157,9 @@ class _NavItem extends StatelessWidget {
   final bool isActive;
   final VoidCallback onTap;
 
+  static const _duration = Duration(milliseconds: 320);
+  static const _curve = Curves.easeOutCubic;
+
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -167,8 +170,8 @@ class _NavItem extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 4),
           child: AnimatedContainer(
-            duration: const Duration(milliseconds: 220),
-            curve: Curves.easeOut,
+            duration: _duration,
+            curve: _curve,
             padding: EdgeInsets.symmetric(
               horizontal: isActive ? 14 : 0,
               vertical: 10,
@@ -176,31 +179,59 @@ class _NavItem extends StatelessWidget {
             decoration: BoxDecoration(
               color: isActive ? Colors.white : Colors.transparent,
               borderRadius: BorderRadius.circular(40),
+              boxShadow: isActive
+                  ? [
+                      BoxShadow(
+                        color: Colors.black.withValues(alpha: 0.06),
+                        blurRadius: 10,
+                        offset: const Offset(0, 3),
+                      ),
+                    ]
+                  : null,
             ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  isActive ? activeIcon : icon,
-                  size: 22,
-                  color: AppColors.textPrimary,
-                ),
-                if (isActive) ...[
-                  const SizedBox(width: 8),
-                  Flexible(
-                    child: Text(
-                      label,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: GoogleFonts.publicSans(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w600,
-                        color: AppColors.textPrimary,
+            child: ClipRect(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  AnimatedSwitcher(
+                    duration: const Duration(milliseconds: 220),
+                    transitionBuilder: (child, animation) => FadeTransition(
+                      opacity: animation,
+                      child: ScaleTransition(
+                        scale: Tween<double>(begin: 0.85, end: 1).animate(animation),
+                        child: child,
                       ),
                     ),
+                    child: Icon(
+                      isActive ? activeIcon : icon,
+                      key: ValueKey(isActive),
+                      size: 22,
+                      color: AppColors.textPrimary,
+                    ),
+                  ),
+                  AnimatedCrossFade(
+                    firstChild: const SizedBox.shrink(),
+                    secondChild: Padding(
+                      padding: const EdgeInsets.only(left: 8),
+                      child: Text(
+                        label,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: GoogleFonts.publicSans(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w600,
+                          color: AppColors.textPrimary,
+                        ),
+                      ),
+                    ),
+                    crossFadeState: isActive
+                        ? CrossFadeState.showSecond
+                        : CrossFadeState.showFirst,
+                    duration: _duration,
+                    sizeCurve: _curve,
                   ),
                 ],
-              ],
+              ),
             ),
           ),
         ),

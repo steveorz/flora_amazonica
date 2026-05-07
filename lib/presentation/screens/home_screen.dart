@@ -39,7 +39,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              _TopBar(onSearchTap: () => _openSearch(context)),
+              _TopBar(onSubmit: (q) => _runSearch(context, q)),
               const SizedBox(height: 28),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -52,6 +52,15 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                     letterSpacing: -0.5,
                     color: AppColors.textPrimary,
                   ),
+                ),
+              ),
+              const SizedBox(height: 24),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24),
+                child: _MorphologyCta(
+                  onTap: () => ref
+                      .read(bottomNavIndexProvider.notifier)
+                      .setIndex(1),
                 ),
               ),
               const SizedBox(height: 28),
@@ -85,69 +94,178 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     return plants.where((p) => p.morphologyType == type).toList();
   }
 
-  void _openSearch(BuildContext context) {
+  void _runSearch(BuildContext context, String query) {
+    if (query.trim().isEmpty) return;
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (_) => const ResultsScreen(title: 'Catálogo Completo', query: ''),
+        builder: (_) => ResultsScreen(
+          title: 'Búsqueda: $query',
+          query: query,
+        ),
       ),
     );
   }
 }
 
-class _TopBar extends StatelessWidget {
-  const _TopBar({required this.onSearchTap});
+class _TopBar extends StatefulWidget {
+  const _TopBar({required this.onSubmit});
 
-  final VoidCallback onSearchTap;
+  final ValueChanged<String> onSubmit;
+
+  @override
+  State<_TopBar> createState() => _TopBarState();
+}
+
+class _TopBarState extends State<_TopBar> {
+  bool _searching = false;
+  final _ctrl = TextEditingController();
+  final _focus = FocusNode();
+
+  @override
+  void dispose() {
+    _ctrl.dispose();
+    _focus.dispose();
+    super.dispose();
+  }
+
+  void _expand() {
+    setState(() => _searching = true);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _focus.requestFocus();
+    });
+  }
+
+  void _collapse() {
+    setState(() => _searching = false);
+    _ctrl.clear();
+    _focus.unfocus();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(24, 16, 24, 0),
-      child: Row(
-        children: [
-          Container(
-            width: 44,
-            height: 44,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              border: Border.all(color: Colors.white, width: 2),
-              image: const DecorationImage(
-                image: NetworkImage(
-                  'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200',
-                ),
-                fit: BoxFit.cover,
+      child: SizedBox(
+        height: 44,
+        child: AnimatedSwitcher(
+          duration: const Duration(milliseconds: 260),
+          switchInCurve: Curves.easeOut,
+          switchOutCurve: Curves.easeIn,
+          transitionBuilder: (child, animation) => FadeTransition(
+            opacity: animation,
+            child: child,
+          ),
+          child: _searching ? _expandedRow() : _collapsedRow(),
+        ),
+      ),
+    );
+  }
+
+  Widget _collapsedRow() {
+    return Row(
+      key: const ValueKey('collapsed'),
+      children: [
+        Container(
+          width: 44,
+          height: 44,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            border: Border.all(color: Colors.white, width: 2),
+            image: const DecorationImage(
+              image: NetworkImage(
+                'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200',
               ),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.06),
-                  blurRadius: 10,
-                  offset: const Offset(0, 3),
+              fit: BoxFit.cover,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.06),
+                blurRadius: 10,
+                offset: const Offset(0, 3),
+              ),
+            ],
+          ),
+        ),
+        const Spacer(),
+        const _PillIconButton(icon: Icons.notifications_none_rounded),
+        const SizedBox(width: 12),
+        GestureDetector(
+          onTap: _expand,
+          child: Container(
+            height: 44,
+            padding: const EdgeInsets.symmetric(horizontal: 18),
+            decoration: _pillDecoration,
+            child: Row(
+              children: [
+                const Icon(Icons.search_rounded, size: 20, color: AppColors.textPrimary),
+                const SizedBox(width: 8),
+                Text(
+                  'Buscar',
+                  style: GoogleFonts.publicSans(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                    color: AppColors.textPrimary,
+                  ),
                 ),
               ],
             ),
           ),
-          const Spacer(),
-          const _PillIconButton(icon: Icons.notifications_none_rounded),
-          const SizedBox(width: 12),
+        ),
+      ],
+    );
+  }
+
+  Widget _expandedRow() {
+    return Container(
+      key: const ValueKey('expanded'),
+      height: 44,
+      padding: const EdgeInsets.only(left: 18, right: 6),
+      decoration: _pillDecoration,
+      child: Row(
+        children: [
+          const Icon(Icons.search_rounded, size: 20, color: AppColors.textPrimary),
+          const SizedBox(width: 10),
+          Expanded(
+            child: TextField(
+              controller: _ctrl,
+              focusNode: _focus,
+              autofocus: true,
+              textInputAction: TextInputAction.search,
+              onSubmitted: (q) {
+                widget.onSubmit(q);
+                _collapse();
+              },
+              style: GoogleFonts.publicSans(
+                fontSize: 14,
+                color: AppColors.textPrimary,
+              ),
+              decoration: InputDecoration(
+                isCollapsed: true,
+                contentPadding: EdgeInsets.zero,
+                border: InputBorder.none,
+                enabledBorder: InputBorder.none,
+                focusedBorder: InputBorder.none,
+                hintText: 'Nombre científico o común…',
+                hintStyle: GoogleFonts.publicSans(
+                  fontSize: 14,
+                  color: AppColors.textPrimary.withValues(alpha: 0.5),
+                ),
+              ),
+            ),
+          ),
           GestureDetector(
-            onTap: onSearchTap,
+            onTap: _collapse,
             child: Container(
-              height: 44,
-              padding: const EdgeInsets.symmetric(horizontal: 18),
-              decoration: _pillDecoration,
-              child: Row(
-                children: [
-                  const Icon(Icons.search_rounded, size: 20, color: AppColors.textPrimary),
-                  const SizedBox(width: 8),
-                  Text(
-                    'Buscar',
-                    style: GoogleFonts.publicSans(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                      color: AppColors.textPrimary,
-                    ),
-                  ),
-                ],
+              width: 32,
+              height: 32,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: AppColors.textPrimary.withValues(alpha: 0.06),
+              ),
+              child: const Icon(
+                Icons.close_rounded,
+                size: 18,
+                color: AppColors.textPrimary,
               ),
             ),
           ),
@@ -185,6 +303,84 @@ final BoxDecoration _pillDecoration = BoxDecoration(
   ],
 );
 
+class _MorphologyCta extends StatelessWidget {
+  const _MorphologyCta({required this.onTap});
+
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: double.infinity,
+        padding: const EdgeInsets.fromLTRB(24, 22, 22, 22),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(24),
+          gradient: const LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [Color(0xFFE07A3D), Color(0xFFD35400)],
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: AppColors.secondary.withValues(alpha: 0.25),
+              blurRadius: 20,
+              offset: const Offset(0, 10),
+            ),
+          ],
+        ),
+        child: Row(
+          children: [
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    'Identificación\nMorfológica',
+                    style: GoogleFonts.spaceGrotesk(
+                      color: Colors.white,
+                      fontSize: 24,
+                      fontWeight: FontWeight.w700,
+                      height: 1.1,
+                      letterSpacing: -0.3,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    'Identifique especímenes mediante hábito, exudado y hojas.',
+                    style: GoogleFonts.publicSans(
+                      color: Colors.white.withValues(alpha: 0.85),
+                      fontSize: 13,
+                      fontWeight: FontWeight.w400,
+                      height: 1.35,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(width: 16),
+            Container(
+              width: 56,
+              height: 56,
+              decoration: BoxDecoration(
+                color: Colors.white.withValues(alpha: 0.22),
+                shape: BoxShape.circle,
+              ),
+              child: const Icon(
+                Icons.biotech_rounded,
+                color: Colors.white,
+                size: 30,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 class _CategoryChips extends StatelessWidget {
   const _CategoryChips({required this.selected, required this.onSelect});
 
@@ -206,7 +402,7 @@ class _CategoryChips extends StatelessWidget {
           return GestureDetector(
             onTap: () => onSelect(cat),
             child: AnimatedContainer(
-              duration: const Duration(milliseconds: 200),
+              duration: const Duration(milliseconds: 220),
               padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 10),
               decoration: BoxDecoration(
                 color: isActive ? Colors.white : Colors.white.withValues(alpha: 0.5),
