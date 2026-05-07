@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Public+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#012d1d",
+                    "error": "#ba1a1a",
+                    "secondary-fixed": "#ffdbcd",
+                    "on-secondary-fixed-variant": "#7c2e00",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#00452e",
+                    "secondary": "#a23f00",
+                    "on-primary-fixed": "#002114",
+                    "surface-container-low": "#f3f4ed",
+                    "on-surface": "#1a1c18",
+                    "inverse-surface": "#2f312d",
+                    "tertiary-fixed": "#b1f0ce",
+                    "on-surface-variant": "#414844",
+                    "on-primary-container": "#86af99",
+                    "surface-container": "#edeee8",
+                    "on-secondary": "#ffffff",
+                    "background": "#f9faf3",
+                    "secondary-fixed-dim": "#ffb595",
+                    "surface": "#f9faf3",
+                    "on-secondary-fixed": "#351000",
+                    "primary-fixed-dim": "#a5d0b9",
+                    "primary-container": "#1b4332",
+                    "surface-bright": "#f9faf3",
+                    "tertiary": "#002d1c",
+                    "surface-container-highest": "#e2e3dc",
+                    "secondary-container": "#fc7127",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed-variant": "#274e3d",
+                    "on-error": "#ffffff",
+                    "primary-fixed": "#c1ecd4",
+                    "surface-variant": "#e2e3dc",
+                    "on-background": "#1a1c18",
+                    "inverse-primary": "#a5d0b9",
+                    "surface-container-lowest": "#ffffff",
+                    "outline-variant": "#c1c8c2",
+                    "outline": "#717973",
+                    "on-secondary-container": "#5c2000",
+                    "surface-container-high": "#e8e9e2",
+                    "on-error-container": "#93000a",
+                    "surface-tint": "#3f6653",
+                    "on-tertiary-fixed": "#002114",
+                    "tertiary-fixed-dim": "#95d4b3",
+                    "inverse-on-surface": "#f0f1ea",
+                    "on-tertiary-container": "#75b393",
+                    "on-primary": "#ffffff",
+                    "surface-dim": "#d9dbd4",
+                    "on-tertiary-fixed-variant": "#0e5138"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Public Sans"],
+                    "label": ["Public Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .chlorophyll-gradient {
+        background: linear-gradient(155deg, #012D1D 0%, #1B4332 100%);
+      }
+      body {
+        background-color: #f9faf3;
+        color: #1a1c18;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<header class="docked full-width top-0 sticky z-50 flex justify-between items-center w-full px-6 py-4 border-none bg-[#F9FAF3] dark:bg-stone-950">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#1B4332] dark:text-[#EDEEE8] hover:opacity-80 transition-opacity cursor-pointer">arrow_back</span>
+<h1 class="font-['Space_Grotesk'] text-xl font-bold tracking-tight text-[#1B4332] dark:text-[#EDEEE8]">Herbarium Digital</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#1B4332] dark:text-[#EDEEE8] hover:opacity-80 transition-opacity cursor-pointer">search</span>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 md:px-8 pb-32 pt-6">
+<section class="grid grid-cols-1 md:grid-cols-12 gap-4 mb-12">
+<div class="md:col-span-8 group relative overflow-hidden rounded-xl shadow-sm h-[400px] md:h-[600px] bg-surface-container-low">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Stunning close-up of a vibrant tropical tree in the Amazon rainforest with lush green canopy and dappled sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtY3pJsEAQW3ua62ncbSSxp-jlH01dz9LG1FUrr69SOEOJEkfI-YVNYT3Em3jb9RCa3VXTq0fdV8CkJ2BvKAA6rs-4-vQlzWdbeiWM7M-hdG5qinuNLl5UsbNl3Yq7axt3mjpuxmACj7qUa5xE5K7qWgdTNcrDmsKbJbEOZZ3r2-wig38XCJ4KfKqVOizeVUB8Vf8iWNulrC4BczWH51RsROWApI0CfVJErKomYTfhgciAClTcqtkCKr1L4Qd8UlL95ZCXOipb2Gc"/>
+<div class="absolute bottom-6 left-6 z-10">
+<span class="bg-primary/90 text-on-primary px-3 py-1 rounded-full text-xs font-label uppercase tracking-widest mb-2 inline-block">Hábito General</span>
+</div>
+</div>
+<div class="md:col-span-4 grid grid-cols-2 md:grid-cols-1 gap-4">
+<div class="relative rounded-xl overflow-hidden h-[192px] md:h-[292px] bg-surface-container-low group">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Detailed macro shot of a large Amazonian leaf showing intricate vein patterns and intense green texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3lLFM748IcFuMSev8QdvPoBCuCdEG1WpgpK2BCVW1D8u2QGsSSNueY8EFCbqtohJUJEIwbA24IEyvDCLO09o5LpH_klqPbf-GykWGr8zzsBducylkPf_DKqcOXq78O3J8Jld1OfMjCMu52-aPUruPzOyrAu1Lg-5P_HRWm0z6_-FchuxdLM7Q-6Ws3RgPbWccRWvg3ix3y5HRVvhumuxgGmKpPcKcKiCBBfMo1DyXtcCADC344OHmcYyrBr9QyEngmg0wKf130qM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+<p class="text-white text-xs font-label uppercase tracking-wider">Morfología Foliar</p>
+</div>
+</div>
+<div class="relative rounded-xl overflow-hidden h-[192px] md:h-[292px] bg-surface-container-low group">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Exotic tropical flower with vibrant orange and red petals blooming against a dark jungle backdrop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrlvB5zXI-uMhyJCcMfZabQny0ktwg759U_7JBQhrz2Mv0wc88escOyrvyD5HFTmShF3HtvG3Dm5CrZOn8C8sKe9pA2kFPdKegyUh0r22xWXg-Yy6kP6sAmHebIdJfqWMJpWJ5FmfNAVY7L7Z-WPFnpPx8bxBmdTJQbn3zXuNs1cuvwlGpgbB-SEqUS2QlGHRVHD3njcQ_3Bd95wLMGC6o7tpgRDaIHMIwuQrOBnDvzX9oegk2-ll-PCZ9JLDko2xrHUvETPlH-Jg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+<p class="text-white text-xs font-label uppercase tracking-wider">Estructura Floral</p>
+</div>
+</div>
+</div>
+</section>
+<section class="mb-16">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-outline-variant/20 pb-8">
+<div>
+<h2 class="text-secondary font-headline text-5xl md:text-7xl font-bold italic tracking-tighter leading-none mb-4">Calycophyllum spruceanum</h2>
+<div class="flex flex-wrap gap-4 items-center">
+<div class="bg-primary-container px-4 py-2 rounded-xl">
+<span class="text-on-primary-container font-label text-sm font-semibold tracking-wider uppercase">Familia: Rubiaceae</span>
+</div>
+<p class="text-on-surface-variant font-body text-lg italic">Nombres locales: Capirona de altura, Palo Mulato</p>
+</div>
+</div>
+<div class="flex gap-2">
+<div class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center text-primary hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="material-symbols-outlined">share</span>
+</div>
+<div class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center text-primary hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">potted_plant</span>
+</div>
+</div>
+</div>
+</section>
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
+<div class="lg:col-span-7 space-y-12">
+<div>
+<h3 class="font-headline text-2xl font-bold text-primary mb-6 flex items-center gap-3">
+<span class="w-8 h-px bg-secondary"></span>
+                        Descripción Botánica
+                    </h3>
+<div class="prose prose-stone max-w-none">
+<p class="text-on-surface font-body text-lg leading-relaxed mb-6">
+                            Árbol caducifolio que alcanza alturas de hasta 35 metros. Posee un fuste excepcionalmente recto y cilíndrico, caracterizado por una corteza lisa y brillante que se desprende en largas tiras papiráceas, revelando un color verde clorofila intenso en su fase juvenil que torna a café cobrizo.
+                        </p>
+<p class="text-on-surface font-body text-lg leading-relaxed">
+                            Originario de la cuenca amazónica alta, prospera en bosques de restinga y suelos inundables estacionales. Su morfología es un ejemplo de adaptación evolutiva a la alta competencia lumínica del dosel amazónico.
+                        </p>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div class="p-6 rounded-xl bg-surface-container-low">
+<span class="text-secondary font-label text-xs font-bold uppercase tracking-widest mb-3 block">Caracteres Diagnósticos</span>
+<ul class="space-y-3">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-sm mt-1">fiber_manual_record</span>
+<span class="text-on-surface text-sm">Corteza lisa decorticante.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-sm mt-1">fiber_manual_record</span>
+<span class="text-on-surface text-sm">Inflorescencias cimosas terminales.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-sm mt-1">fiber_manual_record</span>
+<span class="text-on-surface text-sm">Estípulas interpeciolares caducas.</span>
+</li>
+</ul>
+</div>
+<div class="p-6 rounded-xl bg-surface-container-low">
+<span class="text-secondary font-label text-xs font-bold uppercase tracking-widest mb-3 block">Estado de Conservación</span>
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded-full border-4 border-primary flex items-center justify-center font-headline font-bold text-primary">LC</div>
+<p class="text-xs text-on-surface-variant italic">Preocupación menor (IUCN). Amplia distribución en Loreto.</p>
+</div>
+</div>
+</div>
+</div>
+<aside class="lg:col-span-5 space-y-8">
+<div class="bg-surface-container-lowest p-8 rounded-2xl shadow-[0_4px_24px_rgba(26,28,24,0.04)] border border-outline-variant/10">
+<h3 class="font-headline text-2xl font-bold text-primary mb-8">Valor Etnobotánico</h3>
+<div class="space-y-8">
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-secondary-fixed-variant">medical_services</span>
+</div>
+<div>
+<h4 class="font-bold text-primary font-body uppercase text-sm tracking-wide mb-1">Uso Medicinal</h4>
+<p class="text-on-surface-variant text-sm">El cocimiento de la corteza se emplea para tratar infecciones fúngicas cutáneas y como cicatrizante post-parto en comunidades ribereñas.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-primary-fixed-variant">home_work</span>
+</div>
+<div>
+<h4 class="font-bold text-primary font-body uppercase text-sm tracking-wide mb-1">Uso Maderable</h4>
+<p class="text-on-surface-variant text-sm">Madera de alta densidad utilizada para herramientas agrícolas, pisos y construcción de canoas debido a su resistencia al agua.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-tertiary-fixed-variant">psychology</span>
+</div>
+<div>
+<h4 class="font-bold text-primary font-body uppercase text-sm tracking-wide mb-1">Valor Cultural</h4>
+<p class="text-on-surface-variant text-sm">Considerada un "árbol maestro" en la tradición oral de Iquitos, asociada a la limpieza y regeneración espiritual.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">eco</span>
+</div>
+<div>
+<h4 class="font-bold text-primary font-body uppercase text-sm tracking-wide mb-1">Valor Ecológico</h4>
+<p class="text-on-surface-variant text-sm">Especie clave en la sucesión forestal y restauración de suelos degradados en la Amazonía baja.</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-10 chlorophyll-gradient text-white py-4 rounded-xl font-bold uppercase tracking-widest text-xs hover:opacity-90 transition-opacity active:scale-95 duration-150">
+                        Descargar Ficha Completa (PDF)
+                    </button>
+</div>
+<div class="rounded-2xl overflow-hidden bg-surface-container-low p-1">
+<div class="h-48 w-full bg-stone-200" data-location="Iquitos, Peru" style="">
+<img class="w-full h-full object-cover" data-alt="Aerial map-like view of the winding Amazon river through dense green rainforest near Iquitos" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHT_rCPOcxTHP-T_mzzm21CAad6LdFbWs2fArwmR_6drSAP3-w1UshMd70N5v7pPtvKHvtZwaO1CXwXIVFrGEO3cIqRTFosuR0Jko-Nk8a8WijIQ3Vf2hxu7047O7riCOAOco02SlYN7FnHfhCl2ooD4EsKJ8iNLJuetVWoqt0g3WmevZR4_dPwR37y8gKsLrRRNpngUe-hw3P26Hfe5uBeH0J8D-HIYwkCpSaTTUiZt69vCf4EUf-4sNuK7vsiO0uT88aSPjbH10"/>
+</div>
+<div class="p-4">
+<div class="flex justify-between items-center">
+<span class="text-xs font-label font-bold text-primary uppercase tracking-tighter">Distribución en Loreto</span>
+<span class="text-[10px] text-on-surface-variant font-mono">3.7492° S, 73.2539° W</span>
+</div>
+</div>
+</div>
+</aside>
+</section>
+</main>
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-2 bg-[#FFFFFF]/80 dark:bg-stone-900/80 backdrop-blur-xl z-50 rounded-t-2xl shadow-[0_-4px_24px_rgba(26,28,24,0.04)] border-t border-[#EDEEE8]/20 dark:border-white/5">
+<div class="flex flex-col items-center justify-center text-[#1B4332]/60 dark:text-[#EDEEE8]/40 py-2 px-4 hover:bg-[#F3F4ED] dark:hover:bg-white/5 cursor-pointer transition-all active:scale-90 duration-150 ease-in-out">
+<span class="material-symbols-outlined mb-1" data-icon="eco">eco</span>
+<span class="font-['Public_Sans'] text-[10px] font-semibold uppercase tracking-widest">Explorar</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-[#1B4332] dark:bg-[#D35400] text-white rounded-xl py-2 px-4 shadow-lg cursor-pointer active:scale-90 duration-150 ease-in-out">
+<span class="material-symbols-outlined mb-1" data-icon="biotech">biotech</span>
+<span class="font-['Public_Sans'] text-[10px] font-semibold uppercase tracking-widest">Identificar</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#1B4332]/60 dark:text-[#EDEEE8]/40 py-2 px-4 hover:bg-[#F3F4ED] dark:hover:bg-white/5 cursor-pointer transition-all active:scale-90 duration-150 ease-in-out">
+<span class="material-symbols-outlined mb-1" data-icon="potted_plant">potted_plant</span>
+<span class="font-['Public_Sans'] text-[10px] font-semibold uppercase tracking-widest">Favoritos</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#1B4332]/60 dark:text-[#EDEEE8]/40 py-2 px-4 hover:bg-[#F3F4ED] dark:hover:bg-white/5 cursor-pointer transition-all active:scale-90 duration-150 ease-in-out">
+<span class="material-symbols-outlined mb-1" data-icon="settings">settings</span>
+<span class="font-['Public_Sans'] text-[10px] font-semibold uppercase tracking-widest">Ajustes</span>
+</div>
+</nav>
+</body></html>

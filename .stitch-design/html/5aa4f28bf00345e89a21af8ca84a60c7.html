@@ -1,0 +1,242 @@
+<!DOCTYPE html><html class="light" lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Resultados - Herbarium Digital</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#012d1d",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#ffdbcd",
+                        "on-secondary-fixed-variant": "#7c2e00",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#00452e",
+                        "secondary": "#a23f00",
+                        "on-primary-fixed": "#002114",
+                        "surface-container-low": "#f3f4ed",
+                        "on-surface": "#1a1c18",
+                        "inverse-surface": "#2f312d",
+                        "tertiary-fixed": "#b1f0ce",
+                        "on-surface-variant": "#414844",
+                        "on-primary-container": "#86af99",
+                        "surface-container": "#edeee8",
+                        "on-secondary": "#ffffff",
+                        "background": "#f9faf3",
+                        "secondary-fixed-dim": "#ffb595",
+                        "surface": "#f9faf3",
+                        "on-secondary-fixed": "#351000",
+                        "primary-fixed-dim": "#a5d0b9",
+                        "primary-container": "#1b4332",
+                        "surface-bright": "#f9faf3",
+                        "tertiary": "#002d1c",
+                        "surface-container-highest": "#e2e3dc",
+                        "secondary-container": "#fc7127",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#274e3d",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#c1ecd4",
+                        "surface-variant": "#e2e3dc",
+                        "on-background": "#1a1c18",
+                        "inverse-primary": "#a5d0b9",
+                        "surface-container-lowest": "#ffffff",
+                        "outline-variant": "#c1c8c2",
+                        "outline": "#717973",
+                        "on-secondary-container": "#5c2000",
+                        "surface-container-high": "#e8e9e2",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#3f6653",
+                        "on-tertiary-fixed": "#002114",
+                        "tertiary-fixed-dim": "#95d4b3",
+                        "inverse-on-surface": "#f0f1ea",
+                        "on-tertiary-container": "#75b393",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#d9dbd4",
+                        "on-tertiary-fixed-variant": "#0e5138"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Public Sans"],
+                        "label": ["Public Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .chlorophyll-gradient {
+            background: linear-gradient(155deg, #012D1D 0%, #1B4332 100%);
+        }
+        body { font-family: 'Public Sans', sans-serif; }
+        h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-6 py-4 w-full sticky top-0 z-50 bg-[#F9FAF3] dark:bg-[#1A1C18] font-['Space_Grotesk'] font-bold text-xl">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#012D1D] dark:text-[#EDEEE8] hover:bg-[#F3F4ED] dark:hover:bg-[#2D2E29] transition-colors cursor-pointer p-2 rounded-full" style="">arrow_back</span>
+<h1 class="text-2xl font-bold tracking-tight text-[#012D1D] dark:text-[#EDEEE8] font-['Space_Grotesk']" style="">Catálogo digital</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#012D1D] dark:text-[#EDEEE8] hover:bg-[#F3F4ED] dark:hover:bg-[#2D2E29] transition-colors cursor-pointer p-2 rounded-full" style="">search</span>
+</div>
+</header><div class="bg-[#EDEEE8] dark:bg-[#2D2E29] h-[1px] w-full"></div>
+<main class="max-w-3xl mx-auto px-6 pt-8">
+<!-- Header Section -->
+<section class="mb-12">
+<p class="text-secondary font-bold uppercase tracking-widest text-[10px] mb-2" style="">Búsqueda Avanzada</p>
+<h2 class="text-display-lg text-4xl font-bold text-primary leading-tight" style="">Lista de Resultados</h2>
+<p class="text-on-surface-variant mt-4 text-lg" style="">Catálogo Virtual de Flora Amazónica de Iquitos</p>
+<div class="mt-8 flex items-center gap-4 p-4 bg-surface-container-low rounded-xl">
+<div class="w-16 h-16 rounded-lg overflow-hidden bg-surface-container-highest flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="close-up blurred texture of a dark green tropical leaf with intricate vein patterns under natural forest light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD6qCEwPihNmhhWEeE79IQZhHxyvlOPK-oNlebkW8EQM0TtQnJTmLwdSrg2eaC3_rwYqOs1p-ZWqHeR2jKpv-CxQ5V-JyqY0GhpZOL54KVuRQKQa8mUHMpAsPDqkdbzMRLXXRnh4ZChBZrRq7xABmAB8J-YTo-X1V7V0PehIe5whbq2YFTCiYKoFypA5Ss8WSlzyA2bbhu9JgXQd0Uo6r4YXLHrb6VsslZjPiGhvbXYbqpQODCm0djUnYlu_q1jJ7MYDt0F9koc7Q" style="">
+</div>
+<div>
+<p class="text-label-md text-primary font-bold" style="">Imagen procesada</p>
+<p class="text-body-lg text-on-surface-variant" style="">4 coincidencias taxonómicas encontradas</p>
+</div>
+</div>
+</section>
+<!-- Species List -->
+<div class="space-y-8">
+<!-- Rank 1: High Match -->
+<article class="group relative bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_24px_rgba(26,28,24,0.04)] transition-transform active:scale-[0.98]">
+<div class="flex flex-col md:flex-row h-full">
+<div class="w-full md:w-48 h-64 md:h-auto overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Stunning Victoria Amazonica giant water lily in a dark pond with large circular floating pads and a white bloom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9Pni1B4POp4FeSbem-TBcM6WqH0mcv0cwbQfYAyvN-qPDlUc8qc2o8ksKr47iKDALp10y-pR2sP_-4P0hAN0P_3X8AZ_xcdzm2-c5qT3Nfv1RhUohLQUHtd7H3tlZi8mGtGjw6x3RTH9QSyGCmXlZNiARPTboPp2to3HpDsYoDqPgzNJ5wRUX-B3VRE-aGe4-FMW2mYDtB2eSxqH4Bgc_H-jUeLoUw7NmSUrZfDksUE2pZH8wLOmr5XDkHsNYJkKVKUgX6WpjYSU" style="">
+</div>
+<div class="flex-1 p-6 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-tighter" style="">98% de coincidencia</span>
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-secondary transition-colors" style="">potted_plant</span>
+</div>
+<h3 class="text-primary italic text-xl font-headline mb-1" style="">Victoria amazonica</h3>
+<p class="text-on-surface text-lg font-bold mb-4 italic" style="">(Poepp.) J.C. Sowerby</p>
+<p class="text-on-surface-variant font-medium" style="">Nombre común: Victoria Regia, Lirio de Agua Gigante</p>
+</div>
+<div class="mt-6 flex gap-2">
+<span class="px-3 py-1 bg-surface-container-high rounded text-[10px] font-bold text-primary flex items-center gap-1" style="">
+<span class="material-symbols-outlined text-[14px]" style="">eco</span> HÁBITO: ACUÁTICA
+                            </span>
+<span class="px-3 py-1 bg-surface-container-high rounded text-[10px] font-bold text-primary flex items-center gap-1" style="">
+<span class="material-symbols-outlined text-[14px]" style="">location_on</span> IQUITOS
+                            </span>
+</div>
+</div>
+</div>
+</article>
+<!-- Rank 2 -->
+<article class="group relative bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_24px_rgba(26,28,24,0.04)] transition-transform active:scale-[0.98]">
+<div class="flex flex-col md:flex-row h-full">
+<div class="w-full md:w-48 h-64 md:h-auto overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Lush green Monstera Deliciosa leaf with natural holes and shadows in a tropical humid environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkZqU0VXJSBMLEDixdFnhhQXHuEYaCrqZUQpBsG8d-VqBXwgzCiG6PckJoT2Bqd1Jv5hItZQnQMQi8cmk6tJ3x5dedpxgn2OMuGoGJ3n7sBRxFo7k_CQeihmqfVcnxjZFRRj8O3hCIEWVqfAAYYXkYHynKyldziXu3vT4JVoYQm7sRA3GVlgqRaublWSoIg_m4wTa5jV40uJkZuxv4UFXqWvIVoVTghVLV-vTEgCFetmplnKaZIssxoV1Rbq3h2F6cbjUGJBhQ6bs" style="">
+</div>
+<div class="flex-1 p-6 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="bg-surface-container-highest text-primary px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-tighter" style="">85% de coincidencia</span>
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-secondary transition-colors" style="">potted_plant</span>
+</div>
+<h3 class="text-primary italic text-xl font-headline mb-1" style="">Monstera deliciosa</h3>
+<p class="text-on-surface text-lg font-bold mb-4 italic" style="">Liebm.</p>
+<p class="text-on-surface-variant font-medium" style="">Nombre común: Cerimán, Costilla de Adán</p>
+</div>
+<div class="mt-6 flex gap-2">
+<span class="px-3 py-1 bg-surface-container-high rounded text-[10px] font-bold text-primary flex items-center gap-1" style="">
+<span class="material-symbols-outlined text-[14px]" style="">eco</span> HÁBITO: EPAFITA
+                            </span>
+</div>
+</div>
+</div>
+</article>
+<!-- Rank 3 -->
+<article class="group relative bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_24px_rgba(26,28,24,0.04)] transition-transform active:scale-[0.98]">
+<div class="flex flex-col md:flex-row h-full">
+<div class="w-full md:w-48 h-64 md:h-auto overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Exotic Heliconia Rostrata flowers hanging vertically with vibrant red and yellow bracts against dark green foliage" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuhOIPMtDxWWELR1lpX-rwtZt6zYrTyTVwbUAl2cYoZiBoWSJYs-c5leBVmucztMjPBFlnnnTKE9KCgiRS7ij6qRAxJdfFCZFacsz-9nf3PzPSe2bET6BhXjIKbyG5Wp-omJ4LmoZy60VaZwT_5QLD_3GxYYo6bh06tOKECAml-NF0Rz6ZykBOPvJvz2RUXUENXbFnhvC6AyjrdR1UKhFuFo48x7fRsrCPIOPasK2dOhAwkVsDIDr5TBVA4ZFTL565-tqQRd6scWg" style="">
+</div>
+<div class="flex-1 p-6 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="bg-surface-container-highest text-primary px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-tighter" style="">72% de coincidencia</span>
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-secondary transition-colors" style="">potted_plant</span>
+</div>
+<h3 class="text-primary italic text-xl font-headline mb-1" style="">Heliconia rostrata</h3>
+<p class="text-on-surface text-lg font-bold mb-4 italic" style="">Ruiz &amp; Pav.</p>
+<p class="text-on-surface-variant font-medium" style="">Nombre común: Patujú, Pico de Tucán</p>
+</div>
+<div class="mt-6 flex gap-2">
+<span class="px-3 py-1 bg-surface-container-high rounded text-[10px] font-bold text-primary flex items-center gap-1" style="">
+<span class="material-symbols-outlined text-[14px]" style="">eco</span> HÁBITO: HIERBA
+                            </span>
+</div>
+</div>
+</div>
+</article>
+<!-- Rank 4 -->
+<article class="group relative bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_24px_rgba(26,28,24,0.04)] transition-transform active:scale-[0.98]">
+<div class="flex flex-col md:flex-row h-full opacity-70">
+<div class="w-full md:w-48 h-64 md:h-auto overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close up of Hevea Brasiliensis tree bark with white natural rubber latex dripping into a collection bowl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDviga4g2_Y68Z9dTgA35PNQdF7r-5ykAjf0hWz9yDcGpEZDVwbcjelyKBogrHPoLJVp_NWv8q_FV5fHwnMzREnHhttPmpaMFAfiSWGl97AjFeNhDs34Dg_kF9JFwbF8f-RmtfAQYnrouhwfKqgmoZR5az_mzhRDTX6wXSBTCeNc4OvuhN5mFp1qupe5CqMaSsbp7ouSF99PFW2Hjt-m6brw7QUjN4dLB_Oj5j24SRIWkn7lHDCc3RxU4y0mNw59eGKVdgKf8PyHQM" style="">
+</div>
+<div class="flex-1 p-6 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="bg-surface-container-highest text-primary px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-tighter" style="">64% de coincidencia</span>
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-secondary transition-colors" style="">potted_plant</span>
+</div>
+<h3 class="text-primary italic text-xl font-headline mb-1" style="">Hevea brasiliensis</h3>
+<p class="text-on-surface text-lg font-bold mb-4 italic" style="">Müll.Arg.</p>
+<p class="text-on-surface-variant font-medium" style="">Nombre común: Shiringa, Árbol del Caucho</p>
+</div>
+<div class="mt-6 flex gap-2">
+<span class="px-3 py-1 bg-surface-container-high rounded text-[10px] font-bold text-primary flex items-center gap-1" style="">
+<span class="material-symbols-outlined text-[14px]" style="">eco</span> HÁBITO: ÁRBOL
+                            </span>
+</div>
+</div>
+</div>
+</article>
+</div>
+<!-- CTA Action -->
+<div class="mt-16 text-center">
+<button class="px-8 py-4 chlorophyll-gradient text-white font-bold rounded-xl shadow-lg active:scale-95 transition-transform" style="">
+                Refinar Identificación
+            </button>
+<p class="mt-4 text-label-md text-on-surface-variant" style="">¿No es lo que buscabas? Prueba una toma más cercana.</p>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-8 pb-6 pt-3 bg-[#F9FAF3]/80 dark:bg-[#1A1C18]/80 backdrop-blur-md rounded-t-xl border-t border-[#EDEEE8]/20 dark:border-[#2D2E29]/20 shadow-[0_-4px_24px_rgba(26,28,24,0.04)]">
+<div class="flex flex-col items-center justify-center text-[#012D1D] dark:text-[#EDEEE8] px-6 py-2 hover:text-[#D35400] dark:hover:text-[#FFB4A2] transition-colors cursor-pointer">
+<span class="material-symbols-outlined" style="">search_check</span>
+<span class="font-['Public_Sans'] font-medium text-[12px] mt-1" style="">Explorar</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-[#1B4332] text-[#FFFFFF] rounded-xl px-6 py-2 transition-all duration-300 active:scale-95 ease-in-out cursor-pointer">
+<span class="material-symbols-outlined" style="">center_focus_strong</span>
+<span class="font-['Public_Sans'] font-medium text-[12px] mt-1" style="">Identificar</span>
+</div>
+</nav>
+</body></html>

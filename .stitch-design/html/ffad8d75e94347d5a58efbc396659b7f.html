@@ -1,0 +1,206 @@
+<!DOCTYPE html><html class="light" lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Public+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#012d1d",
+                    "error": "#ba1a1a",
+                    "secondary-fixed": "#ffdbcd",
+                    "on-secondary-fixed-variant": "#7c2e00",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#00452e",
+                    "secondary": "#a23f00",
+                    "on-primary-fixed": "#002114",
+                    "surface-container-low": "#f3f4ed",
+                    "on-surface": "#1a1c18",
+                    "inverse-surface": "#2f312d",
+                    "tertiary-fixed": "#b1f0ce",
+                    "on-surface-variant": "#414844",
+                    "on-primary-container": "#86af99",
+                    "surface-container": "#edeee8",
+                    "on-secondary": "#ffffff",
+                    "background": "#f9faf3",
+                    "secondary-fixed-dim": "#ffb595",
+                    "surface": "#f9faf3",
+                    "on-secondary-fixed": "#351000",
+                    "primary-fixed-dim": "#a5d0b9",
+                    "primary-container": "#1b4332",
+                    "surface-bright": "#f9faf3",
+                    "tertiary": "#002d1c",
+                    "surface-container-highest": "#e2e3dc",
+                    "secondary-container": "#fc7127",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed-variant": "#274e3d",
+                    "on-error": "#ffffff",
+                    "primary-fixed": "#c1ecd4",
+                    "surface-variant": "#e2e3dc",
+                    "on-background": "#1a1c18",
+                    "inverse-primary": "#a5d0b9",
+                    "surface-container-lowest": "#ffffff",
+                    "outline-variant": "#c1c8c2",
+                    "outline": "#717973",
+                    "on-secondary-container": "#5c2000",
+                    "surface-container-high": "#e8e9e2",
+                    "on-error-container": "#93000a",
+                    "surface-tint": "#3f6653",
+                    "on-tertiary-fixed": "#002114",
+                    "tertiary-fixed-dim": "#95d4b3",
+                    "inverse-on-surface": "#f0f1ea",
+                    "on-tertiary-container": "#75b393",
+                    "on-primary": "#ffffff",
+                    "surface-dim": "#d9dbd4",
+                    "on-tertiary-fixed-variant": "#0e5138"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Public Sans"],
+                    "label": ["Public Sans"]
+            }
+          },
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .chlorophyll-gradient {
+            background: linear-gradient(155deg, #012d1d 0%, #1b4332 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body min-h-screen pb-24">
+<header class="flex justify-between items-center px-6 py-4 w-full sticky top-0 z-50 bg-[#F9FAF3] dark:bg-[#1A1C18]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#012D1D] dark:text-[#EDEEE8]" style="">park</span>
+<h1 class="text-2xl font-bold tracking-tight text-[#012D1D] dark:text-[#EDEEE8] font-['Space_Grotesk']" style="">Catálogo digital</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#012D1D] dark:text-[#EDEEE8] hover:bg-[#F3F4ED] dark:hover:bg-[#2D2E29] transition-colors p-2 rounded-full" style="">search</span>
+</div>
+</header>
+<main class="px-6 pt-8 max-w-5xl mx-auto">
+<section class="mb-12">
+<div class="mb-2">
+<span class="font-label text-[10px] uppercase tracking-[0.2em] text-secondary font-bold" style="">Iquitos · Región Loreto</span>
+<h2 class="font-headline text-4xl md:text-6xl font-bold text-primary leading-[1.1] mt-2 mb-4" style="">Catálogo Virtual de Flora Amazónica</h2>
+<p class="text-on-surface-variant max-w-xl text-lg leading-relaxed italic" style="">
+                    Un sistema experto para la exploración taxonómica y conservación del patrimonio botánico del Amazonas peruano.
+                </p>
+</div>
+</section>
+<section class="mb-12 relative">
+<div class="bg-surface-container-highest rounded-xl p-1 flex items-center shadow-sm">
+<span class="material-symbols-outlined px-4 text-outline" data-icon="search" style="">search</span>
+<input class="bg-transparent border-none focus:ring-0 w-full py-4 text-on-surface font-body placeholder:text-outline" placeholder="Buscar por nombre científico o común..." type="text">
+<button class="bg-primary text-white px-6 py-3 rounded-xl font-semibold hover:opacity-90 transition-all mr-1" style="">Explorar</button>
+</div>
+<div class="flex gap-3 mt-4 overflow-x-auto pb-2 no-scrollbar">
+<span class="bg-surface-container-high text-primary px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap" style="">Lupuna</span>
+<span class="bg-surface-container-high text-primary px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap" style="">Victoria amazonica</span>
+<span class="bg-surface-container-high text-primary px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap" style="">Ayahuasca</span>
+<span class="bg-surface-container-high text-primary px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap" style="">Cedrela odorata</span>
+</div>
+</section>
+<section class="mb-16">
+<button class="w-full bg-[#D35400] text-white py-8 px-8 rounded-xl flex flex-col md:flex-row items-center justify-between gap-6 group hover:scale-[1.01] transition-transform duration-300 shadow-xl shadow-secondary/10" style="">
+<div class="text-left">
+<h3 class="font-headline text-2xl md:text-3xl font-bold mb-2" style="">Identificación Morfológica Asistida</h3>
+<p class="text-white/80 text-sm md:text-base font-light max-w-md" style="">Identifique especímenes mediante caracteres vegetativos: hábito, exudado, estípulas y hojas.</p>
+</div>
+<div class="bg-white/20 p-4 rounded-full group-active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-4xl md:text-5xl" data-icon="biotech" style="font-variation-settings: &quot;FILL&quot; 1;">biotech</span>
+</div>
+</button>
+</section>
+<section class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-24">
+<div class="md:col-span-7 space-y-8">
+<div class="flex justify-between items-end border-b border-outline-variant/30 pb-4">
+<h4 class="font-headline text-xl font-semibold text-primary" style="">Especies Destacadas</h4>
+<span class="text-secondary font-bold text-sm tracking-widest uppercase cursor-pointer hover:underline" style="">Ver Herbario</span>
+</div>
+<div class="group relative overflow-hidden rounded-xl bg-surface-container-low aspect-[16/9]">
+<img alt="Botanical specimen" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-90" data-alt="Lush green tropical rainforest canopy with deep shadows and vibrant sunlight piercing through large prehistoric-looking leaves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlQaCOF1nk_ITTN3amMlvJKOBFiQfS2yxs3HErRlBymRfa-f0eV9N3UXznZzksDSZyr2hQShf3WkiOnpJeiX44Is3Ugt1Vaze28xog1PjpRTqQfUy-oq0rol2yX81-GBhrPHxeC42D0FGrAfutv5ZuI6uQSDez5VzrU-eYGpTbXrUyeqwC_94TJQviaV4iwO66o77NKurugrUkMe2fqtWKA2FRJ9PSZak5qLi7I3ud9uNusn8qXXLe6ZDE7GeKtlYth1s1-pJGxHs" style="">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex flex-col justify-end p-8">
+<p class="text-secondary-fixed text-xs font-bold uppercase tracking-widest mb-1 italic" style="">Ceiba pentandra</p>
+<h5 class="text-white font-headline text-3xl font-bold" style="">Gran Lupuna del Amazonas</h5>
+<div class="flex items-center gap-4 mt-4 text-white/70 text-sm">
+<span class="flex items-center gap-1" style=""><span class="material-symbols-outlined text-sm" data-icon="location_on" style="">location_on</span> Reserva Pacaya Samiria</span>
+<span class="flex items-center gap-1" style=""><span class="material-symbols-outlined text-sm" data-icon="height" style="">height</span> 60m Altura</span>
+</div>
+</div>
+</div>
+</div>
+<div class="md:col-span-5 flex flex-col gap-8">
+<div class="flex justify-between items-end border-b border-outline-variant/30 pb-4">
+<h4 class="font-headline text-xl font-semibold text-primary" style="">Datos del Ecosistema</h4>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl space-y-6 shadow-sm">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-high rounded-lg flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="humidity_percentage" style="">humidity_percentage</span>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant font-bold uppercase" style="">Humedad Relativa</p>
+<p class="font-headline text-xl font-bold text-primary" style="">88% <span class="text-xs font-normal text-on-surface-variant" style="">Promedio Iquitos</span></p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-high rounded-lg flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="potted_plant" style="">potted_plant</span>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant font-bold uppercase" style="">Especies Indexadas</p>
+<p class="font-headline text-xl font-bold text-primary" style="">4,289 <span class="text-xs font-normal text-on-surface-variant" style="">Ejemplares</span></p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-high rounded-lg flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="map" style="">map</span>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant font-bold uppercase" style="">Áreas de Muestreo</p>
+<p class="font-headline text-xl font-bold text-primary" style="">12 <span class="text-xs font-normal text-on-surface-variant" style="">Zonas</span></p>
+</div>
+</div>
+</div>
+<div class="bg-primary text-white p-6 rounded-xl flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary" data-icon="info" style="">info</span>
+<div>
+<p class="text-sm font-semibold mb-1 text-on-primary-container" style="">Contribución Científica</p>
+<p class="text-xs text-white/70 leading-relaxed" style="">Este catálogo utiliza el sistema de clasificación APG IV para la organización taxonómica de las familias.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-8 pb-6 pt-3 bg-[#F9FAF3]/80 dark:bg-[#1A1C18]/80 backdrop-blur-md border-t border-[#EDEEE8]/20 dark:border-[#2D2E29]/20 shadow-[0_-4px_24px_rgba(26,28,24,0.04)] rounded-t-xl">
+<button class="flex flex-col items-center justify-center bg-[#1B4332] text-[#FFFFFF] rounded-xl px-6 py-2 transition-all duration-300 Active: scale-95 duration-200 ease-in-out" style="">
+<span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1;">search_check</span>
+<span class="font-['Public_Sans'] font-medium text-[12px] mt-1" style="">Explorar</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#012D1D] dark:text-[#EDEEE8] px-6 py-2 hover:text-[#D35400] dark:hover:text-[#FFB4A2] transition-colors Active: scale-95 duration-200 ease-in-out" style="">
+<span class="material-symbols-outlined" style="">center_focus_strong</span>
+<span class="font-['Public_Sans'] font-medium text-[12px] mt-1" style="">Identificar</span>
+</button>
+</nav>
+</body></html>

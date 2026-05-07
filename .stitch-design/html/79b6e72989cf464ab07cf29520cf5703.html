@@ -1,0 +1,286 @@
+<!DOCTYPE html><html class="light" lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Public+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#012d1d",
+                    "error": "#ba1a1a",
+                    "secondary-fixed": "#ffdbcd",
+                    "on-secondary-fixed-variant": "#7c2e00",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#00452e",
+                    "secondary": "#a23f00",
+                    "on-primary-fixed": "#002114",
+                    "surface-container-low": "#f3f4ed",
+                    "on-surface": "#1a1c18",
+                    "inverse-surface": "#2f312d",
+                    "tertiary-fixed": "#b1f0ce",
+                    "on-surface-variant": "#414844",
+                    "on-primary-container": "#86af99",
+                    "surface-container": "#edeee8",
+                    "on-secondary": "#ffffff",
+                    "background": "#f9faf3",
+                    "secondary-fixed-dim": "#ffb595",
+                    "surface": "#f9faf3",
+                    "on-secondary-fixed": "#351000",
+                    "primary-fixed-dim": "#a5d0b9",
+                    "primary-container": "#1b4332",
+                    "surface-bright": "#f9faf3",
+                    "tertiary": "#002d1c",
+                    "surface-container-highest": "#e2e3dc",
+                    "secondary-container": "#fc7127",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed-variant": "#274e3d",
+                    "on-error": "#ffffff",
+                    "primary-fixed": "#c1ecd4",
+                    "surface-variant": "#e2e3dc",
+                    "on-background": "#1a1c18",
+                    "inverse-primary": "#a5d0b9",
+                    "surface-container-lowest": "#ffffff",
+                    "outline-variant": "#c1c8c2",
+                    "outline": "#717973",
+                    "on-secondary-container": "#5c2000",
+                    "surface-container-high": "#e8e9e2",
+                    "on-error-container": "#93000a",
+                    "surface-tint": "#3f6653",
+                    "on-tertiary-fixed": "#002114",
+                    "tertiary-fixed-dim": "#95d4b3",
+                    "inverse-on-surface": "#f0f1ea",
+                    "on-tertiary-container": "#75b393",
+                    "on-primary": "#ffffff",
+                    "surface-dim": "#d9dbd4",
+                    "on-tertiary-fixed-variant": "#0e5138"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Public Sans"],
+                    "label": ["Public Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .chlorophyll-gradient {
+            background: linear-gradient(155deg, #012D1D 0%, #1B4332 100%);
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F9FAF3;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1B4332;
+            border-radius: 10px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-6 py-4 w-full sticky top-0 z-50 bg-[#F9FAF3] dark:bg-[#1A1C18]">
+<div class="flex items-center gap-4">
+<button class="hover:bg-[#F3F4ED] dark:hover:bg-[#2D2E29] transition-colors Active: opacity-80 duration-150 text-[#012D1D] dark:text-[#EDEEE8]" style="">
+<span class="material-symbols-outlined" style="">arrow_back</span>
+</button>
+<h1 class="font-['Space_Grotesk'] font-bold text-xl text-[#012D1D] dark:text-[#EDEEE8]" style="">Catálogo digital</h1>
+</div>
+<button class="hover:bg-[#F3F4ED] dark:hover:bg-[#2D2E29] transition-colors Active: opacity-80 duration-150 text-[#012D1D] dark:text-[#EDEEE8]" style="">
+<span class="material-symbols-outlined" style="">search</span>
+</button>
+</header>
+<main class="max-w-md mx-auto px-6 py-8">
+<!-- Header Section -->
+<header class="mb-10">
+<span class="font-label text-secondary font-semibold tracking-widest text-[10px] uppercase" style="">Identificación Técnica</span>
+<h2 class="font-headline text-display-lg text-primary leading-none mt-2" style="">Buscador Morfológico</h2>
+<p class="text-on-surface-variant mt-4 text-body-lg" style="">Filtros botánicos especializados para la Flora Amazónica de Iquitos.</p>
+</header>
+<!-- Filter Selection Flow -->
+<div class="space-y-12">
+<!-- Hábito Section -->
+<section>
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-headline text-headline-sm text-primary" style="">Hábito</h3>
+<span class="material-symbols-outlined text-secondary opacity-50" data-icon="forest" style="">forest</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex flex-col items-center justify-center p-6 bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(26,28,24,0.04)] border border-transparent active:border-secondary transition-all group" style="">
+<span class="material-symbols-outlined text-4xl text-primary group-active:text-secondary mb-2" data-icon="park" style="">park</span>
+<span class="font-label text-label-md font-bold text-primary" style="">Árbol</span>
+</button>
+<button class="flex flex-col items-center justify-center p-6 bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(26,28,24,0.04)] border border-transparent active:border-secondary transition-all group" style="">
+<span class="material-symbols-outlined text-4xl text-primary group-active:text-secondary mb-2" data-icon="nature" style="">nature</span>
+<span class="font-label text-label-md font-bold text-primary" style="">Arbusto</span>
+</button>
+<button class="flex flex-col items-center justify-center p-6 bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(26,28,24,0.04)] border border-transparent active:border-secondary transition-all group" style="">
+<span class="material-symbols-outlined text-4xl text-primary group-active:text-secondary mb-2" data-icon="grass" style="">grass</span>
+<span class="font-label text-label-md font-bold text-primary" style="">Hierba</span>
+</button>
+<button class="flex flex-col items-center justify-center p-6 bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(26,28,24,0.04)] border border-transparent active:border-secondary transition-all group" style="">
+<span class="material-symbols-outlined text-4xl text-primary group-active:text-secondary mb-2" data-icon="account_tree" style="">account_tree</span>
+<span class="font-label text-label-md font-bold text-primary" style="">Liana</span>
+</button>
+</div>
+</section>
+<!-- Exudado Section -->
+<section class="bg-surface-container-low -mx-6 px-6 py-8">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-headline text-headline-sm text-primary" style="">Exudado</h3>
+<span class="material-symbols-outlined text-secondary" data-icon="water_drop" style="">water_drop</span>
+</div>
+<div class="space-y-6">
+<div>
+<span class="font-label text-label-md font-semibold text-primary/60 uppercase tracking-widest block mb-3" style="">Tipo</span>
+<div class="flex gap-2">
+<button class="px-6 py-3 bg-surface-container-lowest rounded-full font-bold text-primary border border-outline-variant/20 flex-1" style="">Látex</button>
+<button class="px-6 py-3 bg-surface-container-lowest rounded-full font-bold text-primary border border-outline-variant/20 flex-1" style="">Resina</button>
+</div>
+</div>
+<div>
+<span class="font-label text-label-md font-semibold text-primary/60 uppercase tracking-widest block mb-3" style="">Color de Exudado</span>
+<div class="grid grid-cols-4 gap-2">
+<button class="flex flex-col items-center gap-1 group" style="">
+<div class="w-12 h-12 rounded-full border border-outline-variant bg-white shadow-inner"></div>
+<span class="text-[10px] font-bold text-on-surface-variant" style="">Blanco</span>
+</button>
+<button class="flex flex-col items-center gap-1 group" style="">
+<div class="w-12 h-12 rounded-full border border-outline-variant bg-slate-50/30 backdrop-blur-sm shadow-inner relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-tr from-transparent to-white/40"></div>
+</div>
+<span class="text-[10px] font-bold text-on-surface-variant" style="">Transp.</span>
+</button>
+<button class="flex flex-col items-center gap-1 group" style="">
+<div class="w-12 h-12 rounded-full border border-outline-variant bg-red-700 shadow-inner"></div>
+<span class="text-[10px] font-bold text-on-surface-variant" style="">Rojo</span>
+</button>
+<button class="flex flex-col items-center gap-1 group" style="">
+<div class="w-12 h-12 rounded-full border border-outline-variant bg-yellow-400 shadow-inner"></div>
+<span class="text-[10px] font-bold text-on-surface-variant" style="">Amarillo</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Flor Section -->
+<section>
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-headline text-headline-sm text-primary" style="">Floración</h3>
+<span class="material-symbols-outlined text-secondary" data-icon="local_florist" style="">local_florist</span>
+</div>
+<div class="space-y-6">
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm border border-outline-variant/10">
+<label class="font-label text-label-md font-bold text-primary mb-2 block" style="">Sexo</label>
+<select class="w-full bg-surface-container-high border-none rounded-lg p-3 text-body-lg focus:ring-2 focus:ring-secondary appearance-none">
+<option>Hermafrodita</option>
+<option>Unisexual Masculina</option>
+<option>Unisexual Femenina</option>
+</select>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm border border-outline-variant/10">
+<label class="font-label text-label-md font-bold text-primary mb-2 block" style="">Inflorescencia</label>
+<div class="grid grid-cols-2 gap-2 mt-2">
+<button class="text-left p-3 rounded-lg bg-surface-container-low text-on-surface-variant font-semibold text-sm" style="">Racimo</button>
+<button class="text-left p-3 rounded-lg bg-surface-container-low text-on-surface-variant font-semibold text-sm" style="">Panícula</button>
+<button class="text-left p-3 rounded-lg bg-surface-container-low text-on-surface-variant font-semibold text-sm" style="">Cima</button>
+<button class="text-left p-3 rounded-lg bg-surface-container-low text-on-surface-variant font-semibold text-sm" style="">Umbela</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Fruto Section -->
+<section class="p-6 bg-primary rounded-3xl text-white overflow-hidden relative">
+<!-- Decorative Botanical Background -->
+<div class="absolute -right-4 -bottom-4 opacity-10 rotate-12">
+<span class="material-symbols-outlined text-[160px]" data-icon="eco" style="">eco</span>
+</div>
+<div class="relative z-10">
+<h3 class="font-headline text-headline-sm mb-6 flex items-center gap-2" style="">
+<span class="material-symbols-outlined text-secondary-fixed-dim" data-icon="nutrition" style="">nutrition</span>
+                        Fruto
+                    </h3>
+<div class="space-y-4">
+<div>
+<span class="font-label text-[10px] uppercase tracking-tighter opacity-70 mb-2 block" style="">Tipo de Fruto</span>
+<div class="flex flex-wrap gap-2">
+<span class="px-4 py-2 bg-white/10 rounded-full text-sm font-semibold border border-white/10" style="">Baya</span>
+<span class="px-4 py-2 bg-white/10 rounded-full text-sm font-semibold border border-white/10" style="">Drupa</span>
+<span class="px-4 py-2 bg-white/10 rounded-full text-sm font-semibold border border-white/10" style="">Cápsula</span>
+<span class="px-4 py-2 bg-white/10 rounded-full text-sm font-semibold border border-white/10" style="">Legumbre</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Semilla Section -->
+<section>
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-headline text-headline-sm text-primary" style="">Semilla</h3>
+<span class="material-symbols-outlined text-secondary" data-icon="grain" style="">grain</span>
+</div>
+<div class="grid grid-cols-1 gap-4">
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-2xl shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" data-icon="straighten" style="">straighten</span>
+</div>
+<div>
+<p class="text-label-md font-bold text-primary" style="">Longitud</p>
+<p class="text-xs text-on-surface-variant" style="">Rango en milímetros</p>
+</div>
+</div>
+<input class="w-24 accent-secondary" type="range">
+</div>
+<div class="p-4 bg-surface-container-lowest rounded-2xl shadow-sm">
+<p class="text-label-md font-bold text-primary mb-3" style="">Arilo / Sarcotesta</p>
+<div class="flex gap-2">
+<button class="flex-1 py-3 bg-surface-container-low rounded-xl text-sm font-bold text-primary active:bg-secondary active:text-white transition-colors" style="">Presente</button>
+<button class="flex-1 py-3 bg-surface-container-low rounded-xl text-sm font-bold text-primary active:bg-secondary active:text-white transition-colors" style="">Ausente</button>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Action Button Fixed -->
+<div class="fixed bottom-24 left-0 w-full px-6 z-40">
+<button class="w-full chlorophyll-gradient text-white py-5 rounded-full font-headline text-lg font-bold shadow-2xl shadow-primary/40 flex items-center justify-center gap-3 active:scale-[0.98] transition-transform" style="">
+<span class="material-symbols-outlined" data-icon="filter_list" style="">filter_list</span>
+                Ver Especies Filtradas
+            </button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-8 pb-6 pt-3 bg-[#F9FAF3]/80 dark:bg-[#1A1C18]/80 backdrop-blur-md rounded-t-xl border-t border-[#EDEEE8]/20 dark:border-[#2D2E29]/20 shadow-[0_-4px_24px_rgba(26,28,24,0.04)]">
+<button class="flex flex-col items-center justify-center text-[#012D1D] dark:text-[#EDEEE8] px-6 py-2 hover:text-[#D35400] dark:hover:text-[#FFB4A2] transition-all duration-300" style="">
+<span class="material-symbols-outlined" style="">search_check</span>
+<span class="font-['Public_Sans'] font-medium text-[12px]" style="">Explorar</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-[#1B4332] text-[#FFFFFF] rounded-xl px-6 py-2 transition-all duration-300 active:scale-95 duration-200 ease-in-out" style="">
+<span class="material-symbols-outlined" style="">center_focus_strong</span>
+<span class="font-['Public_Sans'] font-medium text-[12px]" style="">Identificar</span>
+</button>
+</nav>
+</body></html>
