@@ -25,14 +25,21 @@ class AppTheme {
         ),
       ),
       textTheme: GoogleFonts.publicSansTextTheme().copyWith(
-        displayLarge: GoogleFonts.publicSans(
-          fontSize: 32,
-          fontWeight: FontWeight.bold,
+        displayLarge: GoogleFonts.spaceGrotesk(
+          fontSize: 44,
+          fontWeight: FontWeight.w700,
+          height: 1.05,
+          letterSpacing: -0.5,
           color: AppColors.textPrimary,
         ),
-        displayMedium: GoogleFonts.publicSans(
+        displayMedium: GoogleFonts.spaceGrotesk(
+          fontSize: 32,
+          fontWeight: FontWeight.w700,
+          color: AppColors.textPrimary,
+        ),
+        headlineLarge: GoogleFonts.spaceGrotesk(
           fontSize: 24,
-          fontWeight: FontWeight.bold,
+          fontWeight: FontWeight.w700,
           color: AppColors.textPrimary,
         ),
         bodyLarge: GoogleFonts.publicSans(
